@@ -14,12 +14,9 @@ def send_telegram(text):
 def index():
     ip = request.headers.get("X-Forwarded-For", request.remote_addr)
     ua = request.headers.get("User-Agent")
-    
-    msg = f"🚨 НОВЫЙ ЗАХОД, БЛЯ! 🚨\n\nIP: {ip}\nБраузер: {ua}"
-    
+    msg = f"Есть захождение"
     send_telegram(msg)
-    
-    return "<h1>Сайт на ремонте</h1>"
+    return "OK"
 
-if __name__ == "__main__":
+if name == "main":
     app.run(host="0.0.0.0", port=10000)
