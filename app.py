@@ -1,7 +1,7 @@
 from flask import Flask, request
 import requests
 
-app = Flask(name)
+app = Flask(__name__)
 
 TOKEN = "8839750399:AAEYXRzgs9lAqpGXkbFrhVCwaTiprIuuC38"
 CHAT_ID = "1838683997"
@@ -18,5 +18,5 @@ def index():
     send_telegram(msg)
     return "OK"
 
-if name == "main":
+if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
